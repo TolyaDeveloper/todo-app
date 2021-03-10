@@ -15,6 +15,7 @@ html[data-theme='dark'] {
   --background-list-plus: #00303f;
 
   --equalizer: #cdac81;
+  --hover-equalizer: #484650;
   --switch: #34323d;
   --switch-circle: #26242e;
 }
@@ -51,4 +52,8 @@ h5,
 h6,
 p {
   margin: 0;
+}
+
+.app {
+  padding: 15px 30px 0 30px;
 }
