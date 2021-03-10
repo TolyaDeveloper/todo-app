@@ -4,8 +4,29 @@
   box-sizing: border-box;
 }
 
+html[data-theme='dark'] {
+  --text-main: #f5f4f4;
+  --text-btn: #00303f;
+
+  --background-body: #26242e;
+  --background-list: #34323d;
+  --background-popup: #484650;
+  --background-list-dot: #f5f4f4;
+  --background-list-plus: #00303f;
+
+  --equalizer: #cdac81;
+  --switch: #34323d;
+  --switch-circle: #26242e;
+}
+
 body {
+  @include font('Poppins', 400);
+
   min-width: 320px;
+  font-size: var(--font-size-main);
+  line-height: var(--line-height-main);
+  letter-spacing: var(--letter-spacing-main);
+  background-color: var(--background-body);
 }
 
 a {

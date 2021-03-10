@@ -10,7 +10,7 @@
 }
 
 @mixin font($font-family, $font-weight) {
-  font-family: $font-family;
+  font-family: $font-family, sans-serif;
   font-weight: $font-weight;
 }
 

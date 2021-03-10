@@ -1,1 +1,6 @@
-@include font('../fonts/poppins-v15-latin-regular', 'Poppins', 400, 'normal');
+@include font-face(
+  '../fonts/poppins-v15-latin-regular',
+  'Poppins',
+  400,
+  'normal'
+);
