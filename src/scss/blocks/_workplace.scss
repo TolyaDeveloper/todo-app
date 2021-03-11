@@ -20,6 +20,8 @@
       background-color: var(--accent);
     }
     label {
+      display: flex;
+      padding-right: 22px;
       cursor: pointer;
     }
   }
@@ -29,7 +31,7 @@
     position: absolute;
     overflow: hidden;
     clip: rect(0, 0, 0, 0);
-    &:checked + label ~ .workplace__item-delete {
+    &:checked ~ .workplace__item-delete {
       display: block;
       animation: popup-show 0.3s ease;
     }
@@ -56,6 +58,8 @@
     }
   }
   &__item-delete {
+    position: absolute;
+    right: 37px;
     display: none;
     background-color: transparent;
     border: none;
