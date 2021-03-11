@@ -94,7 +94,6 @@
   }
   &__range-item {
     position: relative;
-    color: var(--text-main);
     font-size: var(--font-size-small);
     &::before {
       content: '';
@@ -145,7 +144,6 @@
     }
   }
   &__setting-name {
-    color: var(--text-main);
     user-select: none;
   }
   &__popup-checker {

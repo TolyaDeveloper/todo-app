@@ -83,6 +83,29 @@
         </div>
       </div>
     </header>
+    <section class="workplace">
+      <div class="workplace__outer">
+        <ul class="workplace__inner">
+          <li class="workplace__item" data-key="${uuidv4()}">
+            <label>
+              <input class="workplace__checkbox" type="checkbox">
+              <p class="workplace__item-text">Lorem ipsum</p>
+            </label>
+            <button class="workplace__item-delete" type="button" aria-label="delete current todo">
+              <img class="workplace__item-image" src="images/dist/icons/delete.svg" alt="delete icon">
+            </button>
+          </li>
+        </ul>
+      </div>
+      <button class="workplace__add" type="button">
+        <svg xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M11.143 4.714H7.286V.857A.857.857 0 006.429 0H5.57a.857.857 0 00-.857.857v3.857H.857A.857.857 0 000 5.571v.858c0 .473.384.857.857.857h3.857v3.857c0 .473.384.857.857.857h.858a.857.857 0 00.857-.857V7.286h3.857A.857.857 0 0012 6.429V5.57a.857.857 0 00-.857-.857z"
+            fill="#F5F4F4" />
+        </svg>
+        new task
+      </button>
+    </section>
   </div>
   <script src="js/bundle.min.js"></script>
 </body>

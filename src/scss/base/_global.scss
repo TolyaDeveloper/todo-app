@@ -26,6 +26,7 @@ body {
   @include font('Poppins', 400);
 
   min-width: 320px;
+  color: var(--text-main);
   font-size: var(--font-size-main);
   line-height: var(--line-height-main);
   letter-spacing: var(--letter-spacing-main);
