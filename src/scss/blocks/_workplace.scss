@@ -16,16 +16,6 @@
     justify-content: space-between;
     align-items: flex-start;
     margin-bottom: 20px;
-    // &.active .workplace__item-delete {
-    //   display: block;
-    //   animation: popup-show 0.3s ease;
-    // }
-    // &.active .workplace__item-text {
-    //   text-decoration: line-through;
-    // }
-    // &.active .workplace__item-text::before {
-    //   background-color: var(--accent);
-    // }
     &:hover .workplace__item-text::before {
       background-color: var(--accent);
     }
@@ -90,6 +80,10 @@
       path {
         fill: var(--background-list-plus);
       }
+    }
+    &:hover {
+      animation: pulse 1s;
+      box-shadow: 0 0 0 15px rgba(#fff, 0);
     }
   }
 }
