@@ -1,6 +1,6 @@
 :root {
   --font-size-main: 14px;
-  --font-size-small: 10px;
+  --font-size-small: 12px;
   --letter-spacing-main: 0.5px;
   --line-height-main: 21px;
 
@@ -20,5 +20,9 @@
   --switch: #f5f4f4;
   --switch-circle: #00303f;
 
-  --transition: transform 0.25s ease-in-out;
+  --checker: #f9f8f8;
+
+  --transition: color 0.25s ease-in-out, background-color 0.25s ease-in-out,
+    font-size 0.25s ease-in-out, height 0.25s ease-in-out;
+  --transition-popup: opacity 0.25s ease, height 0.25s ease-in-out;
 }

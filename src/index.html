@@ -1,55 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
-    />
-    <title>todo app</title>
-    <link rel="stylesheet" href="css/bundle.min.css" />
-  </head>
 
-  <body>
-    <div class="app">
-      <header class="header">
-        <div class="menu">
-          <div class="menu__item menu__equalizer-inner">
-            <button
-              class="menu__equalizer"
-              type="button"
-              aria-label="show additional settings"
-            >
-              <svg
-                class="menu__equalizer-img"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M8.75 1.5v-.313A.94.94 0 007.812.25H4.688a.94.94 0 00-.937.938V1.5H0V4h3.75v.313a.94.94 0 00.938.937h3.125a.941.941 0 00.937-.938V4H20V1.5H8.75zM5 4V1.5h2.5V4H5zm11.25 3.438a.941.941 0 00-.938-.938h-3.124a.941.941 0 00-.938.938v.312H0v2.5h11.25v.313c0 .514.422.937.938.937h3.124a.941.941 0 00.938-.938v-.312H20v-2.5h-3.75v-.313zM12.5 10.25v-2.5H15v2.5h-2.5zm-3.75 3.438a.941.941 0 00-.938-.938H4.688a.94.94 0 00-.937.938V14H0v2.5h3.75v.313a.94.94 0 00.938.937h3.125a.941.941 0 00.937-.938V16.5H20V14H8.75v-.313zM5 16.5V14h2.5v2.5H5z"
-                />
-              </svg>
-            </button>
-          </div>
-          <div class="menu__item">
-            <input class="menu__checkbox" id="menu__checkbox" type="checkbox" />
-            <label class="menu__label" for="menu__checkbox">
-              <img
-                class="menu__theme-img"
-                src="images/dist/icons/moon.svg"
-                alt="moon"
-              />
-              <img
-                class="menu__theme-img"
-                src="images/dist/icons/sun.svg"
-                alt="sun"
-              />
-              <div class="menu__switch"></div>
-            </label>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <title>todo app</title>
+  <link rel="stylesheet" href="css/bundle.min.css" />
+</head>
+
+<body>
+  <div class="app">
+    <header class="header">
+      <div class="menu">
+        <div class="menu__item menu__equalizer-inner">
+          <button class="menu__equalizer" type="button" aria-label="show additional settings">
+            <svg class="menu__equalizer-img" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M8.75 1.5v-.313A.94.94 0 007.812.25H4.688a.94.94 0 00-.937.938V1.5H0V4h3.75v.313a.94.94 0 00.938.937h3.125a.941.941 0 00.937-.938V4H20V1.5H8.75zM5 4V1.5h2.5V4H5zm11.25 3.438a.941.941 0 00-.938-.938h-3.124a.941.941 0 00-.938.938v.312H0v2.5h11.25v.313c0 .514.422.937.938.937h3.124a.941.941 0 00.938-.938v-.312H20v-2.5h-3.75v-.313zM12.5 10.25v-2.5H15v2.5h-2.5zm-3.75 3.438a.941.941 0 00-.938-.938H4.688a.94.94 0 00-.937.938V14H0v2.5h3.75v.313a.94.94 0 00.938.937h3.125a.941.941 0 00.937-.938V16.5H20V14H8.75v-.313zM5 16.5V14h2.5v2.5H5z" />
+            </svg>
+          </button>
+          <div class="menu__popup-outer">
+            <ul class="menu__popup">
+              <li class="menu__popup-item">
+                <label class="menu__popup-label">
+                  <input class="menu__popup-input menu__popup-accordion" type="checkbox">
+                  <span class="menu__setting-name">change font size</span>
+                  <span class="menu__popup-checker">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                      <path
+                        d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z" />
+                    </svg>
+                  </span>
+                </label>
+                <div class="menu__range">
+                  <input class="menu__range-input" type="range" min="12" max="14" step="1" value="14">
+                  <ul class="menu__range-menu">
+                    <li class="menu__range-item">12</li>
+                    <li class="menu__range-item">13</li>
+                    <li class="menu__range-item">14</li>
+                  </ul>
+                </div>
+              </li>
+              <li class="menu__popup-item">
+                <label class="menu__popup-label">
+                  <input class="menu__popup-input" type="checkbox" checked>
+                  <span class="menu__setting-name">confirm on delete</span>
+                  <span class="menu__popup-checker">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                      <path
+                        d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z" />
+                    </svg>
+                  </span>
+                </label>
+              </li>
+              <li class="menu__popup-item">
+                <label class="menu__popup-label">
+                  <input class="menu__popup-input" type="checkbox" checked>
+                  <span class="menu__setting-name">animation</span>
+                  <span class="menu__popup-checker">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                      <path
+                        d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z" />
+                    </svg>
+                  </span>
+                </label>
+              </li>
+            </ul>
+            <div class="menu__popup-divider"></div>
+            <div class="menu__popup-btn-container">
+              <button class="menu__clear" type="button">CLEAR ALL LIST</button>
+            </div>
           </div>
         </div>
-      </header>
-    </div>
-    <script src="js/bundle.min.js"></script>
-  </body>
+        <div class="menu__item">
+          <input class="menu__checkbox" id="menu__checkbox" type="checkbox" />
+          <label class="menu__label" for="menu__checkbox">
+            <img class="menu__theme-img" src="images/dist/icons/moon.svg" alt="moon" />
+            <img class="menu__theme-img" src="images/dist/icons/sun.svg" alt="sun" />
+            <div class="menu__switch"></div>
+          </label>
+        </div>
+      </div>
+    </header>
+  </div>
+  <script src="js/bundle.min.js"></script>
+</body>
+
 </html>
