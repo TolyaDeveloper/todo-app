@@ -88,7 +88,7 @@
     <div class="workplace">
       <div class="workplace__outer">
         <ul class="workplace__inner">
-          <li class="workplace__item" data-key="${uuidv4()}">
+          <li class="workplace__item">
             <label>
               <input class="workplace__checkbox" type="checkbox" checked />
               <p class="workplace__item-text">Lorem ipsum</p>
@@ -108,10 +108,10 @@
         new task
       </button>
     </div>
-    <div class="modal">
+    <div class="modal" data-modal="todo">
       <div class="modal__inner">
-        <form class="form">
-          <textarea class="form__textarea" name="text" placeholder="your task..."></textarea>
+        <form class="form" autocomplete="off">
+          <input class="form__input" type="text" name="text" placeholder="your task ...">
           <div class="form__btn-container">
             <button class="form__cancel form__btn btn" type="button" data-close>cancel</button>
             <button class="form__submit form__btn btn" type="submit">add</button>
@@ -125,6 +125,17 @@
         </button>
       </div>
     </div>
+    <div class="modal modal--confirm" data-modal="confirm">
+      <div class="modal__inner modal__inner--confirm">
+        <p class="modal__confirm-text">your task will be unsaved</p>
+        <p class="modal__confirm-text modal__confirm-text--bottom">Continue?</p>
+        <div class="modal__confirm-btn-container">
+          <button class="form__cancel form__btn btn" type="button" data-close>get back</button>
+          <button class="form__btn btn" type="submit" data-close-all>continue</button>
+        </div>
+      </div>
+    </div>
+    <div class="popup-badge">text</div>
   </div>
   <script src="js/bundle.min.js"></script>
 </body>

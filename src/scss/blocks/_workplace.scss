@@ -12,6 +12,7 @@
     padding: 30px 45px;
   }
   &__item {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -21,8 +22,11 @@
     }
     label {
       display: flex;
-      padding-right: 22px;
+      margin-right: 30px;
       cursor: pointer;
+    }
+    &.animated {
+      animation: highlight 1s ease-in-out;
     }
   }
   &__checkbox {
@@ -59,11 +63,16 @@
   }
   &__item-delete {
     position: absolute;
-    right: 37px;
+    top: -7px;
+    right: 0;
     display: none;
+    padding: 0;
     background-color: transparent;
     border: none;
     cursor: pointer;
+  }
+  &__item-image {
+    padding: 8px;
   }
   &__add {
     position: absolute;

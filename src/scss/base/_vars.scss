@@ -11,7 +11,7 @@
 
   --background-body: #fdfcfc;
   --background-list: #f5f4f4;
-  --background-popup: #f9f8f8;
+  --background-popup: #221717;
   --background-list-dot: #00303f;
   --background-list-plus: #f5f4f4;
 
@@ -27,6 +27,8 @@
   --modal-textarea: #f9f8f8;
   --modal-placeholder: rgba(0, 48, 63, 0.6);
   --modal-times: #00303f;
+
+  --highlight: rgba(0, 48, 63, 0.3);
 
   --transition: color 0.25s ease-in-out, background-color 0.25s ease-in-out,
     font-size 0.25s ease-in-out, height 0.25s ease-in-out,

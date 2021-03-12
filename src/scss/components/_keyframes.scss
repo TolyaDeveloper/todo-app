@@ -12,3 +12,9 @@
     box-shadow: 0 0 0 0 var(--accent);
   }
 }
+
+@keyframes highlight {
+  0% {
+    background-color: var(--highlight);
+  }
+}

@@ -1,5 +1,6 @@
-import './mode-switch';
-import './accordion';
-import './equalizer';
-import './scrollbar';
-import './todo';
+import './modules/mode-switch';
+import './modules/accordion';
+import './modules/equalizer';
+import './modules/scrollbar';
+import './modules/todo';
+import './modules/badge';
