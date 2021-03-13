@@ -1,5 +1,12 @@
-import { addActive, removeActive, input, activatePopup } from '../utils';
-import { generate, message } from '../templates';
+import {
+  addActive,
+  removeActive,
+  input,
+  activatePopup,
+  setLocal,
+  getLocal,
+} from '../utils';
+import { todo, message, render } from '../templates';
 
 const form = document.querySelector('.form');
 const modal = document.querySelector('[data-modal="todo"]');
@@ -9,6 +16,15 @@ const closeAll = document.querySelector('[data-close-all]');
 
 const btn = document.querySelector('.workplace__add');
 const parent = document.querySelector('.workplace__inner');
+
+let store = [];
+
+if (getLocal('tasks')) {
+  JSON.parse(getLocal('tasks')).forEach(({ key, pressed, value }) => {
+    store.push({ key, pressed, value });
+    parent.insertAdjacentHTML('afterbegin', render(key, pressed, value));
+  });
+}
 
 btn.addEventListener('click', () => {
   addActive(modal);
@@ -41,9 +57,13 @@ form.addEventListener('submit', (e) => {
   e.preventDefault();
 
   const text = input('.form__input').getText();
+  const utils = todo(text);
 
   if (text) {
-    parent.insertAdjacentHTML('afterbegin', generate(text));
+    parent.insertAdjacentHTML('afterbegin', utils.generate());
+    store.push(utils.data());
+    console.log(store);
+    setLocal('tasks', JSON.stringify(store));
     removeActive(modal);
     form.reset();
     activatePopup('.popup-badge', message.add);
@@ -54,9 +74,17 @@ form.addEventListener('submit', (e) => {
 
 parent.addEventListener('click', (e) => {
   const t = e.target;
+  const item = t.closest('.workplace__item');
 
   if (t.matches('.workplace__item-image')) {
-    t.closest('.workplace__item').remove();
+    const id = item.dataset.key;
+    const itemNum = store.findIndex((item) => item.key === id);
+    store.splice(itemNum, 1);
+    setLocal('tasks', JSON.stringify(store));
+
+    console.log(itemNum);
+
+    item.remove();
     activatePopup('.popup-badge', message.remove);
   }
 });

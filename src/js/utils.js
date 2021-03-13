@@ -27,3 +27,11 @@ export const activatePopup = (selector, value) => {
 
   setTimeout(() => popup.classList.remove('active'), 2000);
 };
+
+export const setLocal = (key, value) => {
+  localStorage.setItem(key, value);
+};
+
+export const getLocal = (key) => {
+  return localStorage.getItem(key);
+};
