@@ -1,8 +1,10 @@
 import { v4 as uuidv4 } from 'uuid';
 
 export const generate = (value) => {
+  const id = uuidv4();
+
   return `
-  <li class="workplace__item animated" data-key="${uuidv4()}">
+  <li class="workplace__item animated" data-key="${id}">
     <label>
       <input class="workplace__checkbox" type="checkbox" />
       <p class="workplace__item-text">${value}</p>
@@ -17,4 +19,5 @@ export const generate = (value) => {
 export const message = {
   add: 'task added!',
   remove: 'task removed',
+  notEmpty: "the field can't be empty",
 };

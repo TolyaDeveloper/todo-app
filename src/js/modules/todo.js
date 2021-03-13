@@ -46,8 +46,9 @@ form.addEventListener('submit', (e) => {
     parent.insertAdjacentHTML('afterbegin', generate(text));
     removeActive(modal);
     form.reset();
-
     activatePopup('.popup-badge', message.add);
+  } else {
+    activatePopup('.popup-badge', message.notEmpty);
   }
 });
 
