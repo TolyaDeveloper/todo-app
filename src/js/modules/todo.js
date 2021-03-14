@@ -87,3 +87,10 @@ parent.addEventListener('click', (e) => {
     activatePopup('.popup-badge', message.remove);
   }
 });
+
+window.addEventListener('keyup', (e) => {
+  if (e.code === 'KeyT') {
+    addActive(modal);
+    input('.form__input').focus();
+  }
+});
