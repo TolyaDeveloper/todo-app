@@ -76,9 +76,10 @@
   }
   &__add {
     position: absolute;
-    left: 50%;
+    left: 0;
+    right: 0;
     bottom: -27px;
-    transform: translateX(-50%);
+    margin: 0 auto;
     padding: 20px 40px;
     border-radius: 50px;
     z-index: 10;

@@ -6,7 +6,7 @@ import {
   setLocal,
   getLocal,
 } from '../utils';
-import { todo, message, render } from '../templates';
+import { todo, message, render, starter } from '../templates';
 
 const form = document.querySelector('.form');
 const modal = document.querySelector('[data-modal="todo"]');
@@ -17,7 +17,7 @@ const closeAll = document.querySelector('[data-close-all]');
 const btn = document.querySelector('.workplace__add');
 const parent = document.querySelector('.workplace__inner');
 
-let store = [];
+const store = [];
 
 if (getLocal('tasks')) {
   JSON.parse(getLocal('tasks')).forEach(({ key, pressed, value }) => {
