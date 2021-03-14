@@ -6,12 +6,13 @@ import {
   setLocal,
   getLocal,
 } from '../utils';
-import { todo, message, render, starter } from '../templates';
+import { todo, message, render } from '../templates';
 
 const form = document.querySelector('.form');
+
 const modal = document.querySelector('[data-modal="todo"]');
 const modalConfirm = document.querySelector('[data-modal="confirm"]');
-const closers = document.querySelectorAll('[data-close]');
+const closers = document.querySelectorAll('[data-close-modal]');
 const closeAll = document.querySelector('[data-close-all]');
 
 const btn = document.querySelector('.workplace__add');
@@ -34,6 +35,7 @@ btn.addEventListener('click', () => {
 closers.forEach((item) => {
   item.addEventListener('click', (e) => {
     if (input('.form__input').getText()) {
+      addActive(modal);
       addActive(modalConfirm);
     } else {
       removeActive(modal);
@@ -62,7 +64,6 @@ form.addEventListener('submit', (e) => {
   if (text) {
     parent.insertAdjacentHTML('afterbegin', utils.generate());
     store.push(utils.data());
-    console.log(store);
     setLocal('tasks', JSON.stringify(store));
     removeActive(modal);
     form.reset();
@@ -81,8 +82,6 @@ parent.addEventListener('click', (e) => {
     const itemNum = store.findIndex((item) => item.key === id);
     store.splice(itemNum, 1);
     setLocal('tasks', JSON.stringify(store));
-
-    console.log(itemNum);
 
     item.remove();
     activatePopup('.popup-badge', message.remove);

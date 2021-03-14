@@ -194,4 +194,15 @@
     background-color: var(--switch-circle);
     transition: var(--transition);
   }
+  &__popup-shortcuts {
+    cursor: pointer;
+  }
+  &__popup-keyboard {
+    position: absolute;
+    top: 2px;
+    right: 0;
+    width: 18px;
+    height: 16px;
+    fill: var(--accent);
+  }
 }
