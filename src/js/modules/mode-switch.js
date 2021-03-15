@@ -1,5 +1,7 @@
-const switcher = document.querySelector('.menu__checkbox');
+import { removeLocal, setLocal } from '../utils';
+
 export const page = document.querySelector('html');
+const switcher = document.querySelector('.menu__checkbox');
 
 if (localStorage.getItem('dark')) {
   page.dataset.theme = 'dark';
@@ -11,9 +13,9 @@ if (localStorage.getItem('dark')) {
 switcher.addEventListener('change', (e) => {
   if (e.target.checked) {
     page.dataset.theme = 'dark';
-    localStorage.setItem('dark', true);
+    setLocal('dark', true);
   } else {
     page.dataset.theme = '';
-    localStorage.removeItem('dark');
+    removeLocal('dark');
   }
 });

@@ -66,7 +66,7 @@
                   </span>
                 </label>
               </li>
-              <li class="menu__popup-item menu__popup-shortcuts" role="button" tabindex="0" data-open="shortcuts">
+              <li class="menu__popup-item menu__popup-shortcuts" role="button" tabindex="-1" data-open="shortcuts">
                 <span class="menu__setting-name">keyboard shortcuts</span>
                 <svg class="menu__popup-keyboard" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
                   <path
@@ -120,7 +120,7 @@
         <form class="form" autocomplete="off">
           <input class="form__input" type="text" name="text" placeholder="your task ..." />
           <div class="form__btn-container">
-            <button class="form__cancel form__btn btn" type="button" data-close-modal>
+            <button class="form__cancel form__btn btn" type="button" data-close>
               cancel
             </button>
             <button class="form__submit form__btn btn" type="submit">
@@ -128,7 +128,7 @@
             </button>
           </div>
         </form>
-        <button class="modal__close" type="button" aria-label="close modal" data-close-modal>
+        <button class="modal__close" type="button" aria-label="close modal" data-close>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 352 512">
             <path
               d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z" />
@@ -143,10 +143,10 @@
           Continue?
         </p>
         <div class="modal__confirm-btn-container">
-          <button class="form__cancel form__btn btn" type="button" data-close-modal>
+          <button class="form__cancel form__btn btn" type="button" data-close>
             get back
           </button>
-          <button class="form__btn btn" type="submit" data-close-all>
+          <button class="form__btn btn" type="submit" data-closeAll>
             continue
           </button>
         </div>
@@ -159,7 +159,7 @@
           <div class="modal__shortcuts-btn btn"><code>T</code> - add task</div>
         </div>
         <div class="modal__shortcuts-submit-container">
-          <button class="form__btn btn" type="button" data-close-ui-modal>get back</button>
+          <button class="form__btn btn" type="button" data-close>get back</button>
         </div>
       </div>
     </div>

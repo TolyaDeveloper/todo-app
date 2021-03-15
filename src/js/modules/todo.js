@@ -12,13 +12,53 @@ const form = document.querySelector('.form');
 
 const modal = document.querySelector('[data-modal="todo"]');
 const modalConfirm = document.querySelector('[data-modal="confirm"]');
-const closers = document.querySelectorAll('[data-close-modal]');
-const closeAll = document.querySelector('[data-close-all]');
 
-const btn = document.querySelector('.workplace__add');
+const modals = document.querySelectorAll('[data-modal]');
+const openers = document.querySelectorAll('[data-open]');
+const closers = document.querySelectorAll('[data-close]');
+const closeAll = document.querySelector('[data-closeAll]');
+
 const parent = document.querySelector('.workplace__inner');
 
 const store = [];
+let modalsOpened = [];
+
+openers.forEach((item) => {
+  item.addEventListener('click', () => {
+    const name = item.dataset.open;
+    let curr = [...modals];
+
+    curr = curr.filter((item) => item.dataset.modal === name);
+    modalsOpened = [...curr];
+
+    addActive(modalsOpened[modalsOpened.length - 1]);
+
+    if (modalsOpened[modalsOpened.length - 1].dataset.modal === 'todo') {
+      input('.form__input').focus();
+    }
+  });
+});
+
+closers.forEach((item) => {
+  item.addEventListener('click', () => {
+    const closestKey = item.closest('[data-modal]').dataset.modal;
+    let text;
+
+    if (closestKey === 'todo') {
+      text = input('.form__input').getText();
+    }
+
+    if (text) {
+      addActive(modalConfirm);
+      modalsOpened.push(modalConfirm);
+      input('.form__input').blur();
+    } else {
+      removeActive(modalsOpened[modalsOpened.length - 1]);
+      modalsOpened.pop();
+    }
+    console.log(modalsOpened);
+  });
+});
 
 if (getLocal('tasks')) {
   JSON.parse(getLocal('tasks')).forEach(({ key, pressed, value }) => {
@@ -26,34 +66,6 @@ if (getLocal('tasks')) {
     parent.insertAdjacentHTML('afterbegin', render(key, pressed, value));
   });
 }
-
-btn.addEventListener('click', () => {
-  addActive(modal);
-  input('.form__input').focus();
-});
-
-closers.forEach((item) => {
-  item.addEventListener('click', (e) => {
-    if (input('.form__input').getText()) {
-      addActive(modal);
-      addActive(modalConfirm);
-    } else {
-      removeActive(modal);
-    }
-
-    if (e.target.closest('.modal:not([data-modal="todo"])')) {
-      removeActive(modalConfirm);
-    }
-  });
-});
-
-closeAll.addEventListener('click', () => {
-  document.querySelectorAll('.modal').forEach((item) => {
-    removeActive(item);
-  });
-
-  form.reset();
-});
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
@@ -65,8 +77,10 @@ form.addEventListener('submit', (e) => {
     parent.insertAdjacentHTML('afterbegin', utils.generate());
     store.push(utils.data());
     setLocal('tasks', JSON.stringify(store));
-    removeActive(modal);
+    removeActive(modalsOpened[0]);
     form.reset();
+    modalsOpened = [];
+    input('.form__input').blur();
     activatePopup('.popup-badge', message.add);
   } else {
     activatePopup('.popup-badge', message.notEmpty);
@@ -105,7 +119,39 @@ parent.addEventListener('click', (e) => {
 
 window.addEventListener('keyup', (e) => {
   if (e.code === 'KeyT') {
-    addActive(modal);
-    input('.form__input').focus();
+    if (modalsOpened.length === 0) {
+      addActive(modal);
+      modalsOpened.push(modal);
+      input('.form__input').focus();
+    }
+    console.log(modalsOpened);
   }
+});
+
+window.addEventListener('keyup', (e) => {
+  if (e.code === 'Escape' && modalsOpened.length !== 0) {
+    if (modalsOpened[modalsOpened.length - 1].dataset.modal === 'confirm') {
+      removeActive(modalsOpened[modalsOpened.length - 1]);
+      modalsOpened.pop();
+    } else if (
+      input('.form__input').getText() &&
+      modalsOpened[0].dataset.modal === 'todo'
+    ) {
+      addActive(modalConfirm);
+      modalsOpened.push(modalConfirm);
+      input('.form__input').blur();
+    } else {
+      removeActive(modalsOpened[modalsOpened.length - 1]);
+      modalsOpened = [];
+      input('.form__input').blur();
+    }
+
+    console.log(modalsOpened);
+  }
+});
+
+closeAll.addEventListener('click', () => {
+  modalsOpened.forEach((item) => removeActive(item));
+  modalsOpened = [];
+  form.reset();
 });

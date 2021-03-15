@@ -16,6 +16,9 @@ export const input = (selector) => {
     focus() {
       inp.focus();
     },
+    blur() {
+      inp.blur();
+    },
   };
 };
 
@@ -34,4 +37,8 @@ export const setLocal = (key, value) => {
 
 export const getLocal = (key) => {
   return localStorage.getItem(key);
+};
+
+export const removeLocal = (key) => {
+  localStorage.removeItem(key);
 };
