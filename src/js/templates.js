@@ -25,11 +25,22 @@ export const todo = (value) => {
 };
 
 export const render = (key, pressed, value) => {
-  return `
+  return !pressed
+    ? `
       <li class="workplace__item" data-key="${key}">
         <label>
           <input class="workplace__checkbox" type="checkbox" />
-          <p class="workplace__item-text">${value}</p>
+          <span class="workplace__item-text">${value}</span>
+          <button class="workplace__item-delete" type="button" aria-label="delete current todo">
+          <img class="workplace__item-image" src="images/dist/icons/delete.svg"  alt="delete icon"/>
+          </button>
+        </label>
+      </li>
+      `
+    : `<li class="workplace__item" data-key="${key}">
+        <label>
+          <input class="workplace__checkbox" type="checkbox" checked/>
+          <span class="workplace__item-text">${value}</span>
           <button class="workplace__item-delete" type="button" aria-label="delete current todo">
           <img class="workplace__item-image" src="images/dist/icons/delete.svg"  alt="delete icon"/>
           </button>

@@ -86,6 +86,21 @@ parent.addEventListener('click', (e) => {
     item.remove();
     activatePopup('.popup-badge', message.remove);
   }
+
+  if (t.matches('.workplace__item-text') && t.previousElementSibling.checked) {
+    const id = item.dataset.key;
+    const itemNum = store.findIndex((item) => item.key === id);
+    store[itemNum].pressed = false;
+    setLocal('tasks', JSON.stringify(store));
+  } else if (
+    t.matches('.workplace__item-text') &&
+    !t.previousElementSibling.checked
+  ) {
+    const id = item.dataset.key;
+    const itemNum = store.findIndex((item) => item.key === id);
+    store[itemNum].pressed = true;
+    setLocal('tasks', JSON.stringify(store));
+  }
 });
 
 window.addEventListener('keyup', (e) => {
