@@ -71,18 +71,20 @@
     background-color: var(--accent);
     cursor: pointer;
     z-index: 5;
-    &::-webkit-slider-thumb {
-      -webkit-appearance: none;
-      appearance: none;
-    }
-    &::-webkit-slider-thumb,
-    &::-moz-range-thumb {
-      width: 12px;
-      height: 12px;
-      background: var(--accent);
-      border-radius: 50%;
-      border: none;
-    }
+  }
+  &__range-input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    background-color: var(--accent);
+    border-radius: 50%;
+  }
+  &__range-input::-moz-range-thumb {
+    width: 12px;
+    height: 12px;
+    background-color: var(--accent);
+    border-radius: 50%;
   }
   &__range-menu {
     position: absolute;
