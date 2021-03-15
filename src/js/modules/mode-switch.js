@@ -1,5 +1,5 @@
 const switcher = document.querySelector('.menu__checkbox');
-const page = document.querySelector('html');
+export const page = document.querySelector('html');
 
 if (localStorage.getItem('dark')) {
   page.dataset.theme = 'dark';

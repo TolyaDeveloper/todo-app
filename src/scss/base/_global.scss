@@ -30,6 +30,16 @@ html[data-theme='dark'] {
   --checker: #26242e;
 }
 
+html[data-transition='no'] {
+  --transition: none;
+  --transition-popup: none;
+  --transition-background: none;
+  --transition-with-move: none;
+  --popup-animation: none;
+  --pulse-animation: none;
+  --highlight-animation: none;
+}
+
 body {
   @include font('Poppins', 400);
 

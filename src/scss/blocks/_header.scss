@@ -13,7 +13,7 @@
     line-height: 0;
     cursor: pointer;
     border-radius: 50%;
-    transition: background-color 0.25s ease-in-out;
+    transition: var(--transition-background);
     &:hover {
       background-color: var(--hover-equalizer);
     }
@@ -35,7 +35,7 @@
     display: none;
     &.active {
       display: block;
-      animation: popup-show 0.3s ease;
+      animation: var(--popup-animation);
     }
   }
   &__popup {

@@ -33,5 +33,11 @@
   --transition: color 0.25s ease-in-out, background-color 0.25s ease-in-out,
     font-size 0.25s ease-in-out, height 0.25s ease-in-out,
     transform 0.25s ease-in-out;
-  --transition-popup: opacity 0.25s ease, height 0.25s ease-in-out;
+  --transition-popup: opacity 0.25s ease-in-out, height 0.25s ease-in-out;
+  --transition-background: background-color 0.25s ease-in-out;
+  --transition-with-move: transform 0.25s cubic-bezier(0, 0.09, 0.35, 1.44);
+
+  --popup-animation: popup-show 0.3s ease;
+  --pulse-animation: pulse 1s;
+  --highlight-animation: highlight 1s ease-in-out;
 }
