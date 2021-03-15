@@ -23,6 +23,13 @@ const parent = document.querySelector('.workplace__inner');
 const store = [];
 let modalsOpened = [];
 
+if (getLocal('tasks')) {
+  JSON.parse(getLocal('tasks')).forEach(({ key, pressed, value }) => {
+    store.push({ key, pressed, value });
+    parent.insertAdjacentHTML('afterbegin', render(key, pressed, value));
+  });
+}
+
 openers.forEach((item) => {
   item.addEventListener('click', () => {
     const name = item.dataset.open;
@@ -60,13 +67,6 @@ closers.forEach((item) => {
   });
 });
 
-if (getLocal('tasks')) {
-  JSON.parse(getLocal('tasks')).forEach(({ key, pressed, value }) => {
-    store.push({ key, pressed, value });
-    parent.insertAdjacentHTML('afterbegin', render(key, pressed, value));
-  });
-}
-
 form.addEventListener('submit', (e) => {
   e.preventDefault();
 
@@ -94,7 +94,9 @@ parent.addEventListener('click', (e) => {
   if (t.matches('.workplace__item-image')) {
     const id = item.dataset.key;
     const itemNum = store.findIndex((item) => item.key === id);
-    store.splice(itemNum, 1);
+    if (itemNum >= 0) {
+      store.splice(itemNum, 1);
+    }
     setLocal('tasks', JSON.stringify(store));
 
     item.remove();

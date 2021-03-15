@@ -1,4 +1,10 @@
-import { getLocal, setLocal } from '../utils';
+import {
+  addActive,
+  getLocal,
+  removeActive,
+  removeLocal,
+  setLocal,
+} from '../utils';
 import { page } from './mode-switch';
 
 const input = document.querySelector('.menu__popup-accordion');
@@ -14,7 +20,7 @@ if (getLocal('fontSize')) {
 
 if (getLocal('rangeOpened')) {
   input.setAttribute('checked', 'checked');
-  equalizerMenu.classList.add('active');
+  addActive(equalizerMenu);
 }
 
 if (getLocal('animated')) {
@@ -26,11 +32,11 @@ if (getLocal('animated')) {
 
 input.addEventListener('change', (e) => {
   if (e.target.checked) {
-    equalizerMenu.classList.add('active');
+    addActive(equalizerMenu);
     setLocal('rangeOpened', true);
   } else {
-    equalizerMenu.classList.remove('active');
-    localStorage.removeItem('rangeOpened');
+    removeActive(equalizerMenu);
+    removeLocal('rangeOpened');
   }
 });
 
@@ -44,7 +50,7 @@ range.addEventListener('change', (e) => {
 animation.addEventListener('change', (e) => {
   if (!e.target.checked) {
     page.dataset.transition = 'no';
-    localStorage.removeItem('animated');
+    removeLocal('animated');
   } else {
     page.dataset.transition = '';
     setLocal('animated', true);

@@ -1,23 +1,10 @@
-import { removeActive } from '../utils';
+const toggleClick = (selector, target) => {
+  const selectorItem = document.querySelector(selector);
+  const popupItem = document.querySelector(target);
 
-const equalizer = document.querySelector('.menu__equalizer');
-const popup = document.querySelector('.menu__popup-outer');
-const showShortcuts = document.querySelector('[data-open="shortcuts"]');
-const showShortcutsContainer = document.querySelector(
-  '[data-modal="shortcuts"]'
-);
-// const closeUIModals = document.querySelectorAll('[data-close-ui-modal]');
+  selectorItem.addEventListener('click', () => {
+    popupItem.classList.toggle('active');
+  });
+};
 
-equalizer.addEventListener('click', () => {
-  popup.classList.toggle('active');
-});
-
-// showShortcuts.addEventListener('click', () => {
-//   showShortcutsContainer.classList.add('active');
-// });
-
-// closeUIModals.forEach((item) => {
-//   item.addEventListener('click', (e) => {
-//     removeActive(e.target.closest('[data-modal]'));
-//   });
-// });
+toggleClick('.menu__equalizer', '.menu__popup-outer');
