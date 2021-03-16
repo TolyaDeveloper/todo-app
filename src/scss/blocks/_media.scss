@@ -1,0 +1,25 @@
+@media (max-width: 767px) {
+  .workplace__outer {
+    margin: 30px auto 0 auto;
+  }
+  .popup-badge {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+  }
+}
+
+@media (max-width: 575px) {
+  .workplace__inner {
+    padding: 30px 15px;
+  }
+  .workplace__outer {
+    height: 400px;
+  }
+}
+
+@media (max-width: 400px) {
+  .menu__popup-inner {
+    right: -85px;
+  }
+}
