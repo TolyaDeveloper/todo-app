@@ -7,4 +7,4 @@ const toggleClick = (selector, target) => {
   });
 };
 
-toggleClick('.menu__equalizer', '.menu__popup-outer');
+toggleClick('.menu__equalizer', '.menu__popup-inner');

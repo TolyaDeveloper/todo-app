@@ -8,7 +8,7 @@ export const todo = (value) => {
     generate() {
       return `
       <li class="workplace__item animated" data-key="${id}">
-        <label>
+        <label class="d-f">
           <input class="workplace__checkbox" type="checkbox" />
           <p class="workplace__item-text">${value}</p>
           <button class="workplace__item-delete" type="button" aria-label="delete current todo">
@@ -28,7 +28,7 @@ export const render = (key, pressed, value) => {
   return !pressed
     ? `
       <li class="workplace__item" data-key="${key}">
-        <label>
+        <label class="d-f">
           <input class="workplace__checkbox" type="checkbox" />
           <span class="workplace__item-text">${value}</span>
           <button class="workplace__item-delete" type="button" aria-label="delete current todo">
@@ -38,7 +38,7 @@ export const render = (key, pressed, value) => {
       </li>
       `
     : `<li class="workplace__item" data-key="${key}">
-        <label>
+        <label class="d-f">
           <input class="workplace__checkbox" type="checkbox" checked/>
           <span class="workplace__item-text">${value}</span>
           <button class="workplace__item-delete" type="button" aria-label="delete current todo">

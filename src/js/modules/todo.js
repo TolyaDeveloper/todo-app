@@ -12,6 +12,7 @@ const form = document.querySelector('.form');
 
 const modal = document.querySelector('[data-modal="todo"]');
 const modalConfirm = document.querySelector('[data-modal="confirm"]');
+const clearAll = document.querySelector('[data-clearAll]');
 
 const modals = document.querySelectorAll('[data-modal]');
 const openers = document.querySelectorAll('[data-open]');
@@ -20,7 +21,7 @@ const closeAll = document.querySelector('[data-closeAll]');
 
 const parent = document.querySelector('.workplace__inner');
 
-const store = [];
+let store = [];
 let modalsOpened = [];
 
 if (getLocal('tasks')) {
@@ -156,4 +157,10 @@ closeAll.addEventListener('click', () => {
   modalsOpened.forEach((item) => removeActive(item));
   modalsOpened = [];
   form.reset();
+});
+
+clearAll.addEventListener('click', () => {
+  setLocal('tasks', JSON.stringify([]));
+  parent.textContent = '';
+  store = [];
 });

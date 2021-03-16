@@ -19,3 +19,8 @@
   background-size: cover;
   background-repeat: no-repeat;
 }
+
+@mixin hide-checkbox {
+  position: absolute;
+  appearance: none;
+}

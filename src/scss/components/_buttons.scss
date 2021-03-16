@@ -1,6 +1,12 @@
 .btn {
   background-color: var(--accent);
   color: var(--text-btn);
-  border: none;
-  cursor: pointer;
+  &--btn {
+    cursor: pointer;
+    border: none;
+  }
+  &--form {
+    padding: 10px 30px;
+    border-radius: 10px;
+  }
 }

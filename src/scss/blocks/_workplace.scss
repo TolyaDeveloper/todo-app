@@ -3,9 +3,9 @@
   &__outer {
     max-width: 500px;
     height: 350px;
-    overflow: auto;
     margin: 10px auto 0 auto;
     background-color: var(--background-list);
+    overflow: auto;
     box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
   }
   &__inner {
@@ -13,15 +13,11 @@
   }
   &__item {
     position: relative;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
     margin-bottom: 20px;
     &:hover .workplace__item-text::before {
       background-color: var(--accent);
     }
     label {
-      display: flex;
       margin-right: 30px;
       cursor: pointer;
     }
@@ -30,11 +26,7 @@
     }
   }
   &__checkbox {
-    height: 1px;
-    width: 1px;
-    position: absolute;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
+    @include hide-checkbox;
     &:checked ~ .workplace__item-delete {
       display: block;
       animation: popup-show 0.3s ease;
@@ -65,8 +57,8 @@
     position: absolute;
     top: -7px;
     right: 0;
-    display: none;
     padding: 0;
+    display: none;
     background-color: transparent;
     border: none;
     cursor: pointer;

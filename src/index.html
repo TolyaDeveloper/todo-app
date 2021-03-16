@@ -12,7 +12,7 @@
 <body>
   <div class="app">
     <header class="header">
-      <div class="menu">
+      <div class="menu d-f jc-fe ai-c">
         <div class="menu__equalizer-inner">
           <button class="menu__equalizer" type="button" aria-label="show additional settings">
             <svg class="menu__equalizer-img" xmlns="http://www.w3.org/2000/svg">
@@ -20,10 +20,10 @@
                 d="M8.75 1.5v-.313A.94.94 0 007.812.25H4.688a.94.94 0 00-.937.938V1.5H0V4h3.75v.313a.94.94 0 00.938.937h3.125a.941.941 0 00.937-.938V4H20V1.5H8.75zM5 4V1.5h2.5V4H5zm11.25 3.438a.941.941 0 00-.938-.938h-3.124a.941.941 0 00-.938.938v.312H0v2.5h11.25v.313c0 .514.422.937.938.937h3.124a.941.941 0 00.938-.938v-.312H20v-2.5h-3.75v-.313zM12.5 10.25v-2.5H15v2.5h-2.5zm-3.75 3.438a.941.941 0 00-.938-.938H4.688a.94.94 0 00-.937.938V14H0v2.5h3.75v.313a.94.94 0 00.938.937h3.125a.941.941 0 00.937-.938V16.5H20V14H8.75v-.313zM5 16.5V14h2.5v2.5H5z" />
             </svg>
           </button>
-          <div class="menu__popup-outer">
+          <div class="menu__popup-inner">
             <ul class="menu__popup">
               <li class="menu__popup-item">
-                <label class="menu__popup-label">
+                <label class="menu__popup-label d-f jc-sb ai-c">
                   <input class="menu__popup-input menu__popup-accordion" type="checkbox" />
                   <span class="menu__setting-name">change font size</span>
                   <span class="menu__popup-checker">
@@ -35,7 +35,7 @@
                 </label>
                 <div class="menu__range">
                   <input class="menu__range-input" type="range" min="12" max="14" step="1" value="14" />
-                  <ul class="menu__range-menu">
+                  <ul class="menu__range-menu d-f jc-sb">
                     <li class="menu__range-item">12</li>
                     <li class="menu__range-item">13</li>
                     <li class="menu__range-item">14</li>
@@ -43,7 +43,7 @@
                 </div>
               </li>
               <li class="menu__popup-item">
-                <label class="menu__popup-label">
+                <label class="menu__popup-label d-f jc-sb ai-c">
                   <input class="menu__popup-input" type="checkbox" checked />
                   <span class="menu__setting-name">confirm on delete</span>
                   <span class="menu__popup-checker">
@@ -55,7 +55,7 @@
                 </label>
               </li>
               <li class="menu__popup-item">
-                <label class="menu__popup-label">
+                <label class="menu__popup-label d-f jc-sb ai-c">
                   <input class="menu__popup-input menu__popup-animation" type="checkbox" checked />
                   <span class="menu__setting-name">animation</span>
                   <span class="menu__popup-checker">
@@ -76,7 +76,7 @@
             </ul>
             <div class="menu__popup-divider"></div>
             <div class="menu__popup-btn-container">
-              <button class="menu__clear btn" type="button">
+              <button class="menu__clear btn btn--btn" type="button" data-open="clearAll">
                 CLEAR ALL LIST
               </button>
             </div>
@@ -84,7 +84,7 @@
         </div>
         <div class="menu__item">
           <input class="menu__checkbox" id="menu__checkbox" type="checkbox" />
-          <label class="menu__label" for="menu__checkbox">
+          <label class="menu__label d-f jc-sb ai-c" for="menu__checkbox">
             <img class="menu__theme-img" src="images/dist/icons/moon.svg" alt="moon" />
             <img class="menu__theme-img" src="images/dist/icons/sun.svg" alt="sun" />
             <span class="menu__switch"></span>
@@ -96,7 +96,7 @@
       <div class="workplace__outer">
         <ul class="workplace__inner">
           <li class="workplace__item">
-            <label>
+            <label class="d-f">
               <input class="workplace__checkbox" type="checkbox" checked />
               <span class="workplace__item-text">Lorem ipsum</span>
               <button class="workplace__item-delete" type="button" aria-label="delete current todo">
@@ -106,7 +106,7 @@
           </li>
         </ul>
       </div>
-      <button class="workplace__add btn" type="button" data-open="todo">
+      <button class="workplace__add btn btn--btn" type="button" data-open="todo">
         <svg xmlns="http://www.w3.org/2000/svg">
           <path
             d="M11.143 4.714H7.286V.857A.857.857 0 006.429 0H5.57a.857.857 0 00-.857.857v3.857H.857A.857.857 0 000 5.571v.858c0 .473.384.857.857.857h3.857v3.857c0 .473.384.857.857.857h.858a.857.857 0 00.857-.857V7.286h3.857A.857.857 0 0012 6.429V5.57a.857.857 0 00-.857-.857z"
@@ -120,10 +120,10 @@
         <form class="form" autocomplete="off">
           <input class="form__input" type="text" name="text" placeholder="your task ..." />
           <div class="form__btn-container">
-            <button class="form__cancel form__btn btn" type="button" data-close>
+            <button class="form__cancel btn btn--btn btn--form" type="button" data-close>
               cancel
             </button>
-            <button class="form__submit form__btn btn" type="submit">
+            <button class="btn btn--btn btn--form" type="submit">
               add
             </button>
           </div>
@@ -138,15 +138,15 @@
     </div>
     <div class="modal modal--confirm" data-modal="confirm">
       <div class="modal__inner modal__inner--confirm">
-        <p class="modal__confirm-text">your task will be unsaved</p>
-        <p class="modal__confirm-text modal__confirm-text--bottom">
+        <p class="modal__text">your task will be unsaved</p>
+        <p class="modal__text modal__text--bottom">
           Continue?
         </p>
         <div class="modal__confirm-btn-container">
-          <button class="form__cancel form__btn btn" type="button" data-close>
+          <button class="form__cancel btn btn--btn btn--form" type="button" data-close>
             get back
           </button>
-          <button class="form__btn btn" type="submit" data-closeAll>
+          <button class="btn btn--btn btn--form" type="submit" data-closeAll>
             continue
           </button>
         </div>
@@ -154,12 +154,28 @@
     </div>
     <div class="modal modal--shortcuts" data-modal="shortcuts">
       <div class="modal__inner">
-        <div class="modal__shortcuts-text">Keycodes</div>
-        <div class="modal__shortcuts-btn-container">
+        <div class="modal__text">Keycodes</div>
+        <div class="modal__btn-container d-f fw-w">
           <div class="modal__shortcuts-btn btn"><code>T</code> - add task</div>
         </div>
         <div class="modal__shortcuts-submit-container">
-          <button class="form__btn btn" type="button" data-close>get back</button>
+          <button class="btn btn--btn btn--form" type="button" data-close>get back</button>
+        </div>
+      </div>
+    </div>
+    <div class="modal" data-modal="clearAll">
+      <div class="modal__inner">
+        <p class="modal__text">all your task will be deleted</p>
+        <p class="modal__text modal__text--bottom">
+          Continue?
+        </p>
+        <div class="form__btn-container">
+          <button class="form__cancel btn btn--btn btn--form" type="button" data-close>
+            cancel
+          </button>
+          <button class="btn btn--btn btn--form" type="submit" data-close data-clearAll>
+            continue
+          </button>
         </div>
       </div>
     </div>
