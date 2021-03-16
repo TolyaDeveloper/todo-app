@@ -44,18 +44,6 @@
               </li>
               <li class="menu__popup-item">
                 <label class="menu__popup-label d-f jc-sb ai-c">
-                  <input class="menu__popup-input" type="checkbox" checked />
-                  <span class="menu__setting-name">confirm on delete</span>
-                  <span class="menu__popup-checker">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                      <path
-                        d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z" />
-                    </svg>
-                  </span>
-                </label>
-              </li>
-              <li class="menu__popup-item">
-                <label class="menu__popup-label d-f jc-sb ai-c">
                   <input class="menu__popup-input menu__popup-animation" type="checkbox" checked />
                   <span class="menu__setting-name">animation</span>
                   <span class="menu__popup-checker">
@@ -80,6 +68,18 @@
                 CLEAR ALL LIST
               </button>
             </div>
+            <div class="menu__popup-divider"></div>
+            <div class="menu__author">
+              <div class="menu__setting-name">Author:</div>
+              <ul class="socials d-f">
+                <li class="socials__item"><a href="https://github.com/TolyaDeveloper" rel="nofollow noopener"><img
+                      class="socials__icon" src="images/dist/icons/github.svg" alt="github" target="_blank"></a>
+                </li>
+                <li class="socials__item"><a href="https://www.instagram.com/gargashanatolii"
+                    rel="nofollow noopener"><img class="socials__icon" src="images/dist/icons/instagram.svg"
+                      alt="instagram" target="_blank"></a></li>
+              </ul>
+            </div>
           </div>
         </div>
         <div class="menu__item">
@@ -99,7 +99,8 @@
             <label class="d-f">
               <input class="workplace__checkbox" type="checkbox" checked />
               <span class="workplace__item-text">Lorem ipsum</span>
-              <button class="workplace__item-delete" type="button" aria-label="delete current todo">
+              <button class="workplace__item-delete" type="button" aria-label="delete current todo"
+                data-open="taskConfirm">
                 <img class="workplace__item-image" src="images/dist/icons/delete.svg" alt="delete icon" />
               </button>
             </label>

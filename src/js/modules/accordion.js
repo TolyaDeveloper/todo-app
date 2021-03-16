@@ -23,11 +23,11 @@ if (getLocal('rangeOpened')) {
   addActive(equalizerMenu);
 }
 
-if (getLocal('animated')) {
-  page.dataset.transition = '';
-} else {
+if (getLocal('animated') === 'false') {
   page.dataset.transition = 'no';
   animation.removeAttribute('checked');
+} else {
+  page.dataset.transition = '';
 }
 
 input.addEventListener('change', (e) => {
@@ -50,7 +50,7 @@ range.addEventListener('change', (e) => {
 animation.addEventListener('change', (e) => {
   if (!e.target.checked) {
     page.dataset.transition = 'no';
-    removeLocal('animated');
+    setLocal('animated', false);
   } else {
     page.dataset.transition = '';
     setLocal('animated', true);

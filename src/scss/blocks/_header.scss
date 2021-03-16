@@ -159,6 +159,9 @@
     padding: 12px 15px;
     font-size: var(--font-size-small);
   }
+  &__author {
+    padding: 15px 10px;
+  }
   &__label {
     position: relative;
     width: 60px;
@@ -187,5 +190,15 @@
     border-radius: 50%;
     background-color: var(--switch-circle);
     transition: var(--transition);
+  }
+}
+
+.socials {
+  margin-top: 10px;
+  &__item + &__item {
+    margin-left: 15px;
+  }
+  &__icon {
+    height: 25px;
   }
 }

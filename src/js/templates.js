@@ -11,7 +11,7 @@ export const todo = (value) => {
         <label class="d-f">
           <input class="workplace__checkbox" type="checkbox" />
           <p class="workplace__item-text">${value}</p>
-          <button class="workplace__item-delete" type="button" aria-label="delete current todo">
+          <button class="workplace__item-delete" type="button" aria-label="delete current todo" data-open="taskConfirm">
           <img class="workplace__item-image" src="images/dist/icons/delete.svg"  alt="delete icon"/>
           </button>
         </label>
@@ -31,7 +31,7 @@ export const render = (key, pressed, value) => {
         <label class="d-f">
           <input class="workplace__checkbox" type="checkbox" />
           <span class="workplace__item-text">${value}</span>
-          <button class="workplace__item-delete" type="button" aria-label="delete current todo">
+          <button class="workplace__item-delete" type="button" aria-label="delete current todo" data-open="taskConfirm">
           <img class="workplace__item-image" src="images/dist/icons/delete.svg"  alt="delete icon"/>
           </button>
         </label>
@@ -41,7 +41,7 @@ export const render = (key, pressed, value) => {
         <label class="d-f">
           <input class="workplace__checkbox" type="checkbox" checked/>
           <span class="workplace__item-text">${value}</span>
-          <button class="workplace__item-delete" type="button" aria-label="delete current todo">
+          <button class="workplace__item-delete" type="button" aria-label="delete current todo" data-open="taskConfirm">
           <img class="workplace__item-image" src="images/dist/icons/delete.svg"  alt="delete icon"/>
           </button>
         </label>
