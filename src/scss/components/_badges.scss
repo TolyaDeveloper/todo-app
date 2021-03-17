@@ -1,0 +1,15 @@
+.popup-badge {
+  position: fixed;
+  bottom: 40px;
+  right: 120px;
+  padding: 15px 35px;
+  background-color: var(--accent);
+  color: var(--text-btn);
+  border-radius: 50px;
+  transform: translateY(100px);
+  transition: var(--transition-with-move);
+  z-index: 20;
+  &.active {
+    transform: translateY(0);
+  }
+}

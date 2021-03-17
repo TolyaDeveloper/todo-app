@@ -1,0 +1,43 @@
+:root {
+  --font-size-main: 14px;
+  --font-size-small: 12px;
+  --letter-spacing-main: 0.5px;
+  --line-height-main: 21px;
+
+  --accent: #cdac81;
+
+  --text-main: #00303f;
+  --text-btn: #f5f4f4;
+
+  --background-body: #fdfcfc;
+  --background-list: #f5f4f4;
+  --background-popup: #f9f8f8;
+  --background-list-dot: #00303f;
+  --background-list-plus: #f5f4f4;
+
+  --equalizer: #00303f;
+  --hover-equalizer: #f5f4f4;
+  --switch: #f5f4f4;
+  --switch-circle: #00303f;
+
+  --checker: #f9f8f8;
+
+  --modal-overlay: rgba(253, 252, 252, 0.7);
+  --modal-background: #f5f4f4;
+  --modal-textarea: #f9f8f8;
+  --modal-placeholder: rgba(0, 48, 63, 0.6);
+  --modal-times: #00303f;
+
+  --highlight: rgba(0, 48, 63, 0.3);
+
+  --transition: color 0.25s ease-in-out, background-color 0.25s ease-in-out,
+    font-size 0.25s ease-in-out, height 0.25s ease-in-out,
+    transform 0.25s ease-in-out;
+  --transition-popup: opacity 0.25s ease-in-out, height 0.25s ease-in-out;
+  --transition-background: background-color 0.25s ease-in-out;
+  --transition-with-move: transform 0.25s cubic-bezier(0, 0.09, 0.35, 1.44);
+
+  --popup-animation: popup-show 0.3s ease;
+  --pulse-animation: pulse 1s;
+  --highlight-animation: highlight 1s ease-in-out;
+}

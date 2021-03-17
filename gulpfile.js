@@ -14,7 +14,7 @@ const sourcemaps = require('gulp-sourcemaps');
 function browsersync() {
   browserSync.init({
     server: { baseDir: 'src/' },
-    online: false,
+    online: true,
     notify: false,
   });
 }

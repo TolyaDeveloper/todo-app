@@ -1,0 +1,20 @@
+@keyframes popup-show {
+  from {
+    transform: scale(0.8);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 var(--accent);
+  }
+}
+
+@keyframes highlight {
+  0% {
+    background-color: var(--highlight);
+  }
+}
