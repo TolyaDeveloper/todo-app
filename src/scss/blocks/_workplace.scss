@@ -7,6 +7,9 @@
     background-color: var(--background-list);
     overflow: auto;
     box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+    &:focus {
+      box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+    }
   }
   &__inner {
     padding: 30px 45px;
@@ -37,6 +40,12 @@
     }
     &:checked + .workplace__item-text::before {
       background-color: var(--accent);
+    }
+    &:focus-visible + span {
+      box-shadow: 0 0 0 2px var(--accent);
+    }
+    &:-moz-focusring + span {
+      box-shadow: 0 0 0 3px var(--accent);
     }
   }
   &__item-text {

@@ -56,6 +56,12 @@
     &:checked ~ .menu__popup-checker svg {
       fill: var(--checker);
     }
+    &:focus-visible ~ .menu__popup-checker {
+      box-shadow: 0 0 0 3px var(--accent);
+    }
+    &:-moz-focusring ~ .menu__popup-checker {
+      box-shadow: 0 0 0 3px var(--accent);
+    }
   }
   &__setting-name {
     user-select: none;
@@ -176,6 +182,12 @@
     @include hide-checkbox;
     &:checked + .menu__label .menu__switch {
       transform: translateX(28px);
+    }
+    &:focus-visible + .menu__label .menu__switch {
+      box-shadow: 0 0 0 3px var(--accent);
+    }
+    &:-moz-focusring ~ .menu__label .menu__switch {
+      box-shadow: 0 0 0 3px var(--accent);
     }
   }
   &__theme-img {
