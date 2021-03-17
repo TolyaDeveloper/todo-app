@@ -65,6 +65,7 @@
   }
   &__setting-name {
     user-select: none;
+    cursor: pointer;
   }
   &__popup-checker {
     position: relative;
@@ -141,16 +142,23 @@
       z-index: -1;
     }
   }
-  &__popup-shortcuts {
+  &__popup-shortcuts,
+  &__popup-info {
     cursor: pointer;
   }
-  &__popup-keyboard {
+  &__popup-li-btn {
+    background-color: transparent;
+    border: none;
+    color: var(--text-main);
+    padding: 0;
+  }
+  &__popup-icon {
     position: absolute;
-    top: 2px;
+    top: 1px;
     right: 0;
-    width: 18px;
-    height: 16px;
-    fill: var(--accent);
+    width: 20px;
+    height: auto;
+    cursor: pointer;
   }
   &__popup-divider {
     width: 100%;

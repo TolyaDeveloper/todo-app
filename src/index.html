@@ -54,12 +54,17 @@
                   </span>
                 </label>
               </li>
-              <li class="menu__popup-item menu__popup-shortcuts" role="button" tabindex="0" data-open="shortcuts">
-                <span class="menu__setting-name">keyboard shortcuts</span>
-                <svg class="menu__popup-keyboard" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
-                  <path
-                    d="M528 448H48c-26.51 0-48-21.49-48-48V112c0-26.51 21.49-48 48-48h480c26.51 0 48 21.49 48 48v288c0 26.51-21.49 48-48 48zM128 180v-40c0-6.627-5.373-12-12-12H76c-6.627 0-12 5.373-12 12v40c0 6.627 5.373 12 12 12h40c6.627 0 12-5.373 12-12zm96 0v-40c0-6.627-5.373-12-12-12h-40c-6.627 0-12 5.373-12 12v40c0 6.627 5.373 12 12 12h40c6.627 0 12-5.373 12-12zm96 0v-40c0-6.627-5.373-12-12-12h-40c-6.627 0-12 5.373-12 12v40c0 6.627 5.373 12 12 12h40c6.627 0 12-5.373 12-12zm96 0v-40c0-6.627-5.373-12-12-12h-40c-6.627 0-12 5.373-12 12v40c0 6.627 5.373 12 12 12h40c6.627 0 12-5.373 12-12zm96 0v-40c0-6.627-5.373-12-12-12h-40c-6.627 0-12 5.373-12 12v40c0 6.627 5.373 12 12 12h40c6.627 0 12-5.373 12-12zm-336 96v-40c0-6.627-5.373-12-12-12h-40c-6.627 0-12 5.373-12 12v40c0 6.627 5.373 12 12 12h40c6.627 0 12-5.373 12-12zm96 0v-40c0-6.627-5.373-12-12-12h-40c-6.627 0-12 5.373-12 12v40c0 6.627 5.373 12 12 12h40c6.627 0 12-5.373 12-12zm96 0v-40c0-6.627-5.373-12-12-12h-40c-6.627 0-12 5.373-12 12v40c0 6.627 5.373 12 12 12h40c6.627 0 12-5.373 12-12zm96 0v-40c0-6.627-5.373-12-12-12h-40c-6.627 0-12 5.373-12 12v40c0 6.627 5.373 12 12 12h40c6.627 0 12-5.373 12-12zm-336 96v-40c0-6.627-5.373-12-12-12H76c-6.627 0-12 5.373-12 12v40c0 6.627 5.373 12 12 12h40c6.627 0 12-5.373 12-12zm288 0v-40c0-6.627-5.373-12-12-12H172c-6.627 0-12 5.373-12 12v40c0 6.627 5.373 12 12 12h232c6.627 0 12-5.373 12-12zm96 0v-40c0-6.627-5.373-12-12-12h-40c-6.627 0-12 5.373-12 12v40c0 6.627 5.373 12 12 12h40c6.627 0 12-5.373 12-12z" />
-                </svg>
+              <li class="menu__popup-item menu__popup-shortcuts" data-open="shortcuts">
+                <button class="menu__popup-li-btn" type="button">
+                  <span class="menu__setting-name">keyboard shortcuts</span>
+                  <img class="menu__popup-icon" src="images/dist/icons/keyboard.svg" alt="keyboard">
+                </button>
+              </li>
+              <li class="menu__popup-item menu__popup-info" data-open="info">
+                <button class="menu__popup-li-btn" type="button">
+                  <span class="menu__setting-name">info</span>
+                  <img class="menu__popup-icon" src="images/dist/icons/info.svg" alt="info">
+                </button>
               </li>
             </ul>
             <div class="menu__popup-divider"></div>
@@ -93,19 +98,8 @@
       </div>
     </header>
     <div class="workplace">
-      <div class="workplace__outer" tabindex="0">
-        <ul class="workplace__inner">
-          <li class="workplace__item">
-            <label class="d-f">
-              <input class="workplace__checkbox" type="checkbox" checked />
-              <span class="workplace__item-text">Lorem ipsum</span>
-              <button class="workplace__item-delete" type="button" aria-label="delete current todo"
-                data-open="taskConfirm">
-                <img class="workplace__item-image" src="images/dist/icons/delete.svg" alt="delete icon" />
-              </button>
-            </label>
-          </li>
-        </ul>
+      <div class="workplace__outer">
+        <ul class="workplace__inner"></ul>
       </div>
       <button class="workplace__add btn btn--btn" type="button" data-open="todo">
         <svg xmlns="http://www.w3.org/2000/svg">
@@ -176,6 +170,19 @@
           </button>
           <button class="btn btn--btn btn--form" type="submit" data-close data-clearAll>
             continue
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="modal" data-modal="info">
+      <div class="modal__inner">
+        <p class="modal__text">- click the task to mark as selected</p>
+        <p class="modal__text modal__text--bottom">
+          - click the bin to delete your task
+        </p>
+        <div class="form__btn-container">
+          <button class="form__cancel btn btn--btn btn--form" type="button" data-close>
+            ok
           </button>
         </div>
       </div>

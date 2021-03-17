@@ -64,7 +64,6 @@ closers.forEach((item) => {
       removeActive(modalsOpened[modalsOpened.length - 1]);
       modalsOpened.pop();
     }
-    console.log(modalsOpened);
   });
 });
 
@@ -104,19 +103,20 @@ parent.addEventListener('click', (e) => {
     activatePopup('.popup-badge', message.remove);
   }
 
-  if (t.matches('.workplace__item-text') && t.previousElementSibling.checked) {
+  const setType = (bool) => {
     const id = item.dataset.key;
     const itemNum = store.findIndex((item) => item.key === id);
-    store[itemNum].pressed = false;
+    store[itemNum].pressed = bool;
     setLocal('tasks', JSON.stringify(store));
+  };
+
+  if (t.matches('.workplace__item-text') && t.previousElementSibling.checked) {
+    setType(false);
   } else if (
     t.matches('.workplace__item-text') &&
     !t.previousElementSibling.checked
   ) {
-    const id = item.dataset.key;
-    const itemNum = store.findIndex((item) => item.key === id);
-    store[itemNum].pressed = true;
-    setLocal('tasks', JSON.stringify(store));
+    setType(true);
   }
 });
 
@@ -127,7 +127,6 @@ window.addEventListener('keyup', (e) => {
       modalsOpened.push(modal);
       input('.form__input').focus();
     }
-    console.log(modalsOpened);
   }
 });
 
@@ -148,8 +147,6 @@ window.addEventListener('keyup', (e) => {
       modalsOpened = [];
       input('.form__input').blur();
     }
-
-    console.log(modalsOpened);
   }
 });
 
