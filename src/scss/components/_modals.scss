@@ -52,6 +52,15 @@
   &__inner--confirm {
     top: 70%;
     min-height: 150px;
+    @media (max-width: 370px) {
+      .form__cancel {
+        margin: 0 auto 15px auto;
+      }
+      button {
+        display: block;
+        margin: 0 auto;
+      }
+    }
   }
   &__text {
     margin-bottom: 20px;
